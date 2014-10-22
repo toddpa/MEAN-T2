@@ -1,0 +1,10 @@
+<div ng-controller="ElementsCtrl as elementsCtrl">
+	<ul class="elements">
+		<li ng-repeat="element in elementsCtrl.elements">
+			<a href="#/{{element.app}}/{{element.element}}/{{element.name}}">
+				<span>{{element.name | questionName}}</span>
+				<span style="padding-left:1em;">{{element.level}}</span>
+			</a>
+		</li>
+	</ul>
+</div>

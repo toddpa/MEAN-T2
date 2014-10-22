@@ -1,0 +1,9 @@
+{
+	"appenders": [{
+		"type": "console"
+	}, {
+		"type": "file",
+		"filename": "logs/math.log",
+		"category": "math"
+	}]
+}
