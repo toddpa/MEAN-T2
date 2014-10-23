@@ -31,9 +31,9 @@ var theAppModule = angular
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
       })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl'
+      .when('/subjects', {
+        templateUrl: 'views/subjects.html',
+        controller: 'ElementsCtrl'
       })
       .when('/:app/:element/:name', {
         templateUrl: 'views/question.html',

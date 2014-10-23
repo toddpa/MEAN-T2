@@ -11,23 +11,10 @@ var logger = log4js.getLogger('math');
 logger.setLevel('DEBUG');
 
 /**
- * Create a article
+ * Return the batch records for a given element
  */
 exports.getBatchesForElement = function(req, res) {
 	logger.debug('ELEMENT: ' + req.params.element);
-	/*
-	var batch = Batches.find({
-		element: req.params.element
-	}, , function(err, batch) {
-		if (err) return handleError(err);
-		if (batch) {
-			res.jsonp(batch);
-		} else {
-			next();
-		}
-	});
-	*/
-
 	var batch = Batches.find({
 		element: req.params.element
 	}).sort({
@@ -44,6 +31,9 @@ exports.getBatchesForElement = function(req, res) {
 	});
 };
 
+/**
+ * Return a concise version of a batch record given a question name 
+ */
 exports.getBatchConcise = function(req, res) {
 	var batch = Batches.findOne({
 		name: req.params.question
@@ -55,6 +45,9 @@ exports.getBatchConcise = function(req, res) {
 	});
 };
 
+/**
+ * Return a full version of a batch record given a question name 
+ */
 exports.getBatchFull = function(req, res) {
 	var batch = Batches.findOne({
 		name: req.params.question
