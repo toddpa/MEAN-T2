@@ -7,9 +7,33 @@
 				</h1>
 			</div>
 			<tabset>
-				<tab heading="Questions">Questions</tab>
-				<tab heading="Examples">Examples</tab>
-				<tab heading="Notes">Notes</tab>
+				<tab heading="Questions">
+					<ul class="question" ng-controller="ElementCtrl as elementCtrl">
+						<li ng-repeat="question in elementCtrl.element.question">
+							<a href="#/{{elementCtrl.element.app}}/{{elementCtrl.element.name}}/{{question.script}}">
+								<span>{{question.script}}</span>
+							</a>
+						</li>
+					</ul>
+				</tab>
+				<tab heading="Examples">
+					<ul class="example" ng-controller="ElementCtrl as elementCtrl">
+						<li ng-repeat="example in elementCtrl.element.example">
+							<a href="#/{{elementCtrl.element.app}}/{{elementCtrl.element.name}}/{{example.script}}">
+								<span>{{example.script}}</span>
+							</a>
+						</li>
+					</ul>
+				</tab>
+				<tab heading="Notes">
+					<ul class="page" ng-controller="ElementCtrl as elementCtrl">
+						<li ng-repeat="page in elementCtrl.element.page">
+							<a href="#/{{elementCtrl.element.app}}/{{elementCtrl.element.name}}/{{page.script}}">
+								<span>{{page.script}}</span>
+							</a>
+						</li>
+					</ul>
+				</tab>
 			</tabset>
 		</div>
 	</div>

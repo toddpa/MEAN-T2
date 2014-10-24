@@ -32,7 +32,7 @@ var theAppModule = angular
         })
         .when('/:app/:element', {
           templateUrl: 'views/elements.html',
-          controller: 'QuestionCtrl'
+          controller: 'ElementCtrl'
         })
         .when('/:app/:element/:name', {
           templateUrl: 'views/question.html',

@@ -38,6 +38,7 @@ http.createServer(app).listen(app.get('port'), function(){
 
 var questionRoute = require('./serverside/routes/question.routes')(app, express.Router());
 var elementsRoute = require('./serverside/routes/elements.routes')(app, express.Router());
+var elementRoute = require('./serverside/routes/element.routes')(app, express.Router());
 
 // Log Error
 function logErrors(err, req, res, next) {

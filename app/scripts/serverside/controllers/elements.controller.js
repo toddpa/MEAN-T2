@@ -39,12 +39,14 @@ exports.getElements = function(req, res) {
  * Return a full version of a element record given a question name
  */
 exports.getElement = function(req, res) {
+	logger.debug('Fetching element ' + req.params.element + ' for app ' + req.params.app);
 	var batch = Elements.findOne({
-		name: req.params.question
-	}, function(err, elements) {
+		app: req.params.app,
+		name: req.params.element
+	}, function(err, element) {
 		if (err) return handleError(err);
-		if (elements) {
-			res.jsonp(elements);
+		if (element) {
+			res.jsonp(element);
 		}
 	});
 };

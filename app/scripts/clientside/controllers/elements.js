@@ -1,6 +1,7 @@
 'use strict';
 
-angular.module('mathsApp').controller('ElementsCtrl', ['$scope', '$routeParams', '$log', 'ElementContent',
+// Controller for the MULTIPLE element(s)
+angular.module('mathsApp').controller('ElementsCtrl', ['$scope', '$routeParams', '$log', 'ElementsContent',
 	function($scope, routeParams, $log, elements) {
 		if ($scope.$parent.appName) {
 			this.elements = elements.query({
@@ -8,7 +9,7 @@ angular.module('mathsApp').controller('ElementsCtrl', ['$scope', '$routeParams',
 			}, function(elements) {
 				$log.debug(elements);
 			});
-			$log.info('**> ElementsCtrl APP: ' + $scope.$parent.appName);
+			$log.debug('**> ElementsCtrl APP: ' + $scope.$parent.appName);
 		}
 	}
 ]);
@@ -18,6 +19,20 @@ angular.module('mathsApp').controller('AppNamesCtrl', ['$routeParams', '$log', '
 		this.appNames = appNames.query({}, function(elements) {
 			$log.debug(appNames);
 		});
-		$log.info('**> AppNamesCtrl');
+		$log.debug('**> AppNamesCtrl');
 	}
 ]);
+
+// Controller for a SINGLE element
+angular.module('mathsApp').controller('ElementCtrl', ['$scope', '$routeParams', '$log', 'ElementContent',
+	function($scope, routeParams, $log, element) {
+			this.element = element.get({
+				app: routeParams.app,
+				element: routeParams.element
+			}, function(element) {
+				$log.debug(element);
+			});
+			$log.debug('**> ElementsCtrl APP: ' + $scope.$parent.appName);
+	}
+]);
+
