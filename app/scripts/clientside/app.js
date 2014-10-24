@@ -16,6 +16,7 @@ var theAppModule = angular
     'ngRoute',
     'ngSanitize',
     'ngTouch',
+    'ui.bootstrap',
     'elementContentService',
     'questionContentService',
     'elementFilter'
@@ -28,6 +29,10 @@ var theAppModule = angular
         .when('/', {
           templateUrl: 'views/subjects.html',
           controller: 'ElementsCtrl'
+        })
+        .when('/:app/:element', {
+          templateUrl: 'views/elements.html',
+          controller: 'QuestionCtrl'
         })
         .when('/:app/:element/:name', {
           templateUrl: 'views/question.html',
