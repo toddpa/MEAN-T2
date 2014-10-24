@@ -10,3 +10,13 @@ angular.module('mathsApp').controller('ElementsCtrl', ['$routeParams', '$log','E
 		$log.info('**> ElementsCtrl');
 	}
 ]);
+
+angular.module('mathsApp').controller('AppNamesCtrl', ['$routeParams', '$log','AppNames',
+	function(routeParams, $log, appNames) {
+		this.appNames = appNames.query({
+		}, function(elements) {
+			$log.debug(appNames);
+		});
+		$log.info('**> AppNamesCtrl');
+	}
+]);

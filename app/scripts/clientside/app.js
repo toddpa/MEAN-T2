@@ -26,7 +26,7 @@ var theAppModule = angular
 
       $routeProvider
         .when('/', {
-          templateUrl: 'views/elements.html',
+          templateUrl: 'views/subjects.html',
           controller: 'ElementsCtrl'
         })
         .when('/:app/:element/:name', {
