@@ -11,13 +11,22 @@ var logger = log4js.getLogger('Elements');
 logger.setLevel('DEBUG');
 
 /**
- * Return the batch records for a given element
+ * Return a lsit of all elements as ordered by the order field
  */
 exports.getElements = function(req, res) {
 	logger.debug('Fetching distinct App names ');
-	var appNames = Elements.distinct('name', {app : req.params.app}).exec(function(err, elements) {
+	var appNames = Elements.find({
+		app: req.params.app
+	}, {
+		app: 1,
+		name: 1,
+		_id: 0
+	}).sort({
+		order: 'asc',
+		test: -1
+	}).exec(function(err, elements) {
 		if (err) return handleError(err);
-		if (elements) {
+		if (appNames) {
 			logger.debug(appNames);
 			res.jsonp(appNames.emitted.complete[0]);
 		} else {

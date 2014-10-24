@@ -1,17 +1,16 @@
 <div ng-controller="AppNamesCtrl as appNamesCtrl" class="row clearfix">
 	<div class="col-md-12 column">
-		<div class="panel-group" id="panel-960198" ng-repeat="appName in appNamesCtrl.appNames">
+		<div class="panel-group" id="panel-{{appName}}" ng-repeat="appName in appNamesCtrl.appNames">
 			<div class="panel panel-default">
 				<div class="panel-heading">
-					<a class="panel-title" data-toggle="collapse" data-parent="#panel-960198" data-target="#panel-element-579250">{{appName}}</a>
+					<a class="panel-title" data-toggle="collapse" data-parent="#panel-{{appName}}" data-target="#panel-element-{{appName}}">{{appName}}</a>
 				</div>
-				<div id="panel-element-579250" class="panel-collapse collapse in" >
+				<div id="panel-element-{{appName}}" class="panel-collapse collapse in" >
 					<div class="panel-body">
 						<ul class="elements" ng-controller="ElementsCtrl as elementsCtrl">
 							<li ng-repeat="element in elementsCtrl.elements">
-								<a href="#/{{element.app}}/{{element.element}}/{{element.name}}">
+								<a href="#/{{element.app}}/{{element.name}}">
 									<span>{{element.name}}</span>
-									<span style="padding-left:1em;float:right;">{{element.level}}</span>
 								</a>
 							</li>
 						</ul>
