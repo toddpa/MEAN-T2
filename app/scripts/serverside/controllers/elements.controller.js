@@ -14,17 +14,12 @@ logger.setLevel('DEBUG');
  * Return the batch records for a given element
  */
 exports.getElements = function(req, res) {
-	logger.debug('Fetching elements for ' + req.params.app);
-	var batch = Elements.find({
-		app: req.params.app
-	}).sort({
-		order: 'asc',
-		test: -1
-	}).exec(function(err, elements) {
+	logger.debug('Fetching distinct App names ');
+	var appNames = Elements.distinct('name', {app : req.params.app}).exec(function(err, elements) {
 		if (err) return handleError(err);
 		if (elements) {
-			logger.trace(elements);
-			res.jsonp(elements);
+			logger.debug(appNames);
+			res.jsonp(appNames.emitted.complete[0]);
 		} else {
 			next();
 		}
@@ -32,7 +27,7 @@ exports.getElements = function(req, res) {
 };
 
 /**
- * Return a full version of a element record given a question name 
+ * Return a full version of a element record given a question name
  */
 exports.getElement = function(req, res) {
 	var batch = Elements.findOne({
