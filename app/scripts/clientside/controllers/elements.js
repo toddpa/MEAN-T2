@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('mathsApp').controller('ElementsCtrl', ['$routeParams', '$log','ElementContent',
-	function(routeParams, $log, elements) {
+angular.module('mathsApp').controller('ElementsCtrl', ['$scope', '$routeParams', '$log','ElementContent',
+	function($scope, routeParams, $log, elements) {
 		this.elements = elements.query({
 			app: 'PERCENTAGES' // this.app
 		}, function(elements) {
