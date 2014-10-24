@@ -2,44 +2,39 @@
 
 /**
  * @ngdoc overview
- * @name angularSeedApp
+ * @name mathsApp
  * @description
- * # angularSeedApp
+ * # mathsApp
  *
  * Main module of the application.
  */
 var theAppModule = angular
-  .module('angularSeedApp', [
+  .module('mathsApp', [
     'ngAnimate',
     'ngCookies',
     'ngResource',
     'ngRoute',
     'ngSanitize',
     'ngTouch',
-    'mathContentService',
+    'elementContentService',
+    'questionContentService',
     'elementFilter'
   ])
-  .config(function($routeProvider) {
-    console.log('**> LOADING angularSeedApp');
+  .config(['$routeProvider', '$logProvider',
+    function($routeProvider, $logProvider) {
+      $logProvider.debugEnabled(true);
 
-    $routeProvider
-      .when('/', {
-        templateUrl: 'views/elements.html',
-        controller: 'ElementsCtrl'
-      })
-      .when('/main', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
-      })
-      .when('/subjects', {
-        templateUrl: 'views/subjects.html',
-        controller: 'ElementsCtrl'
-      })
-      .when('/:app/:element/:name', {
-        templateUrl: 'views/question.html',
-        controller: 'QuestionCtrl'
-      })
-      .otherwise({
-        redirectTo: '/'
-      });
-  });
+      $routeProvider
+        .when('/', {
+          templateUrl: 'views/elements.html',
+          controller: 'ElementsCtrl'
+        })
+        .when('/:app/:element/:name', {
+          templateUrl: 'views/question.html',
+          controller: 'QuestionCtrl'
+        })
+        .otherwise({
+          redirectTo: '/'
+        });
+    }
+  ]);

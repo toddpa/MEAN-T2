@@ -5,5 +5,5 @@ module.exports = function(app, router) {
   router.get('/:app/:element', batchesController.getBatchesForElement);
   router.get('/:app/:element/:question/concise', batchesController.getBatchConcise);
   router.get('/:app/:element/:question/full', batchesController.getBatchFull);
-  app.use('/maths', router);
+  app.use('/questions', router);
 };

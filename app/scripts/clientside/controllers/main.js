@@ -2,12 +2,12 @@
 
 /**
  * @ngdoc function
- * @name angularSeedApp.controller:MainCtrl
+ * @name mathsApp.controller:MainCtrl
  * @description
  * # MainCtrl
- * Controller of the angularSeedApp
+ * Controller of the mathsApp
  */
-angular.module('angularSeedApp')
+angular.module('mathsApp')
 	.controller('MainCtrl', function($scope) {
 		console.log('**> MainCtrl');
 		$scope.awesomeThings = [

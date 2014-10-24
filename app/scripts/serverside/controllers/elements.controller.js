@@ -44,3 +44,20 @@ exports.getElement = function(req, res) {
 		}
 	});
 };
+
+
+/**
+ * Returns the App names within the Element collection
+ */
+exports.getAppNames = function(req, res) {
+	logger.debug('Fetching distinct App names ');
+	var appNames = Elements.distinct('app').exec(function(err, elements) {
+		if (err) return handleError(err);
+		if (elements) {
+			logger.debug(appNames);
+			res.jsonp(appNames.emitted.complete[0]);
+		} else {
+			next();
+		}
+	});
+};

@@ -5,9 +5,9 @@
  * @name angularSeedApp.controller:AboutCtrl
  * @description
  * # AboutCtrl
- * Controller of the angularSeedApp
+ * Controller of the MathsApp
  */
-angular.module('angularSeedApp')
+angular.module('mathsApp')
 	.controller('AboutCtrl', function($scope) {
 		console.log('**> AboutCtrl');
 		$scope.awesomeThings = [

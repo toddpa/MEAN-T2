@@ -1,12 +1,19 @@
 'use strict';
 
 /* Services */
+/**
+ * @ngdoc overview
+ * @name questionContentService
+ * @description
+ * # questionContentService
+ *
+ * Filter.
+ */
 
-var mathContentService = angular.module('mathContentService', ['ngResource']);
+var questionContentService = angular.module('questionContentService', ['ngResource']);
 
-mathContentService.factory('MathContent', ['$resource',
-  function($resource){
-    return $resource('/maths/:app/:element/:question/:form', {}, {
-      percentages: {method:'GET', params:{app:'PERCENTAGES', element: 'FRACTIONS_APP_PREVIEW_PERCENTAGE'}, isArray:true}
-    });
-  }]);
+questionContentService.factory('QuestionContent', ['$resource',
+	function($resource) {
+		return $resource('/questions/:app/:element/:question/:form');
+	}
+]);

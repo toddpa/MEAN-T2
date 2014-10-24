@@ -17,7 +17,7 @@
   <link rel="stylesheet" href="styles/las.style.css">
   <!-- endbuild -->
 </head>
-<body ng-app="angularSeedApp">
+<body ng-app="mathsApp">
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
       <![endif]-->
@@ -26,9 +26,7 @@
       <div class="container">
         <div class="header">
           <ul class="nav nav-pills pull-right">
-            <li class="active"><a ng-href="#/subjects">Subjects</a></li>
-            <li><a ng-href="#/elements">Dictionary</a></li>
-            <li><a ng-href="#/progress">Progress</a></li>
+            <li class="active"><a ng-href="#/elements">Subjects</a></li>
           </ul>
           <h3 class="text-muted">Mathematics</h3>
         </div>
@@ -91,11 +89,10 @@
 
   <!-- build:js({.tmp,app}) scripts/scripts.js -->
   <script src="scripts/clientside/app.js"></script>
-  <script src="scripts/clientside/controllers/main.js"></script>
-  <script src="scripts/clientside/controllers/about.js"></script>
   <script src="scripts/clientside/controllers/question.js"></script>
   <script src="scripts/clientside/controllers/elements.js"></script>
-  <script src="scripts/clientside/services/mathContent.js"></script>
+  <script src="scripts/clientside/services/questionContent.js"></script>
+  <script src="scripts/clientside/services/elementContent.js"></script>
   <script src="scripts/clientside/filters/elementFilter.js"></script>
   <!-- endbuild -->
 

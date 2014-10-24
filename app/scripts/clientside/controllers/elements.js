@@ -1,8 +1,12 @@
 'use strict';
 
-angular.module('angularSeedApp').controller('ElementsCtrl', ['$routeParams', 'MathContent',
-	function(routeParams, content) {
-		this.elements = content.percentages();
-		console.log(this.elements);
+angular.module('mathsApp').controller('ElementsCtrl', ['$routeParams', '$log','ElementContent',
+	function(routeParams, $log, elements) {
+		this.elements = elements.query({
+			app: 'PERCENTAGES' // this.app
+		}, function(elements) {
+			$log.debug(elements);
+		});
+		$log.info('**> ElementsCtrl');
 	}
 ]);
