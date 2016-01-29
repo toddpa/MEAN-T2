@@ -3,12 +3,14 @@
 		<div class="panel-group" id="panel-{{appName}}" ng-repeat="appName in appNamesCtrl.appNames">
 			<div class="panel panel-default">
 				<div class="panel-heading">
+					<span style="color:red;">Subject Name: </span>
 					<a class="panel-title" data-toggle="collapse" data-parent="#panel-{{appName}}" data-target="#panel-element-{{appName}}">{{appName}}</a>
 				</div>
 				<div id="panel-element-{{appName}}" class="panel-collapse collapse" >
 					<div class="panel-body">
 						<ul class="elements" ng-controller="ElementsCtrl as elementsCtrl">
 							<li ng-repeat="element in elementsCtrl.elements">
+								<span style="color:red;">Element Name: </span>
 								<a href="#/{{element.app}}/{{element.name}}">
 									<span>{{element.name}}</span>
 								</a>

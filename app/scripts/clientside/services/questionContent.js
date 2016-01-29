@@ -12,8 +12,9 @@
 
 var questionContentService = angular.module('questionContentService', ['ngResource']);
 
-questionContentService.factory('QuestionContent', ['$resource',
-	function($resource) {
+questionContentService.factory('QuestionContent', ['$resource', '$log',
+	function($resource, $log) {
+		$log.info('questionContentService')
 		return $resource('/questions/:app/:element/:question/:form');
 	}
 ]);

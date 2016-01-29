@@ -1,91 +1,17 @@
-<div xmlns="" id="LAS-snapvsg-io-definitions"></div>
-<div xmlns="" id="LAS-workings" class="las-workout">
-	<canvas id="touchpaint" width="768" height="1000"></canvas>
-</div><div xmlns="" id="LAS-calculator" class="las-workout calculator"></div>
-<div xmlns="" class="las-workout popup">
-	<div class="popup-input-pad">
-		<div id="LAS-decimal-value-pad" class="dvpad"></div>
-	</div>
-</div>
-<div xmlns="" class="las-workout wfpopup">
-	<div id="LAS-wFraction-value-pad" class="popup-wfinput-pad">
-		<svg xmlns="http://www.w3.org/2000/svg" id="wFractionPopup" xlink="http://www.w3.org/1999/xlink" version="1.1"></svg>
-	</div>
-</div>
-<div class="las-container">
-	<div id="LAS-question-content" class="las-content">
-		<div class="las-numberpad fiveButtonsWide">
-			<div class="las-choice-container">
-				<table width="100%">
-					<tr>
-						<td><h3 id="LAS-question" style="text-align:center"><span id="LASQuestionText">Find the three <a title="Fraction with the same value as another" rel="tooltip">equivalent fraction</a>s in the following table.</span><span id="questionMathML" class="mathml-expression-inline-note">
-							<math xmlns="http://www.w3.org/1998/Math/MathML" display="inline-block" id="questionTemplate" class="fraction-text">
-								<mstyle id="expressionGroup" displaystyle="true" color="#89c403">
-									<mrow>
-										<mfrac id="questionline1">
-											<mrow>
-												<mn id="operandN1">
-													2
-												</mn>
-											</mrow>
-											<mrow>
-												<mn id="operandD1">
-													9
-												</mn>
-											</mrow>
-										</mfrac>
-									</mrow>
-								</mstyle>
-							</math></span></h3></td>
-					</tr>
-				</table><div id="LAS-choices" class="las-choice-content"></div><div id="LAS-progress" class="las-progress"></div>
-			</div>
+<div class="container" ng-controller="QuestionCtrl as questionCtrl">
+	<h3>
+		<ul>
+			<li>App: {{questionCtrl.questionBatch.app}}</li>
+			<li>Topic: {{questionCtrl.questionBatch.topic}}</li>
+			<li>Element: {{questionCtrl.questionBatch.element}}</li>
+			<li>Name: {{questionCtrl.questionBatch.name}}</li>
+			<li>Type: {{questionCtrl.questionBatch.type}}</li>
+			<li>Level: {{questionCtrl.questionBatch.level}}</li>
+		</ul>
+		<div>
+			<pre>
+				{{questionCtrl.questionBatch.values}}
+			</pre>
 		</div>
-		<div class="las-numberpad fourButtonsWide bottom">
-			<table>
-				<tr>
-					<td>
-					<div class="questionID">
-						Q21
-					</div></td><td>
-					<div style="float:left;">
-						<div id="nextTimerButton" class="las-timer">
-							0:00
-						</div>
-					</div></td><td>
-					<div style="float:right;">
-						<div id="backButton" class="las-halfButton las-operator">
-							back
-						</div><div class="las-halfButton las-HiddenSpacer"></div>
-						<div id="enterButton" class="las-halfButton las-operator">
-							Answer
-						</div>
-					</div></td>
-				</tr>
-			</table>
-		</div>
-	</div>
-</div>
-<div xmlns="" id="LAS-functions" class="las-control-container">
-	<div class="calc-controls">
-		<div id="LAS-show-calculator" class="las-left"></div>
-		<div id="LAS-calculator-min-display" class="las-calc-display">
-			0
-		</div><div id="testButtons" class="las-test-buttons"></div>
-	</div>
-	<div class="workings-controls-active">
-		<div id="LAS-hide-workings" class="las-right"></div><div id="LAS-clear-workings" class="las-right"></div><div id="LAS-erase-workings" class="las-right"></div><div id="LAS-save-workings" class="las-right"></div>
-	</div>
-	<div class="workings-controls-inactive">
-		<div id="LAS-show-workings" class="las-right"></div>
-	</div>
-</div>
-<div xmlns="" class="las-container">
-	<div id="LAS-marks-content" class="las-content-marks">
-		<div id="LAS-NP-marks" class="las-marks">
-			<table width="100%">
-				<tbody></tbody>
-			</table>
-		</div>
-	</div>
+	</h3>
 </div>

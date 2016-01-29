@@ -10,6 +10,7 @@
   <!-- build:css(.) styles/vendor.css -->
   <!-- bower:css -->
   <link rel="stylesheet" href="bower_components/qunit/qunit/qunit.css" />
+  <link rel="stylesheet" href="bower_components/angular-material/angular-material.css" />
   <!-- endbower -->
   <!-- endbuild -->
   <!-- build:css(.tmp) styles/main.css -->
@@ -26,12 +27,35 @@
       <div class="container">
         <div class="header">
           <ul class="nav nav-pills pull-right">
+            <!-- router --@
             <li class="active"><a ng-href="#/elements">Subjects</a></li>
+            <li><a ng-href="#/dictionary">Dictionary</a></li>
+            <li><a ng-href="#/progress">Progress</a></li>
+            @!-- router -->
+
+            <!-- ui-router -->
+            <li class="active"><a ui-sref="subject">Subjects</a></li>
+            <li><a ui-sref="elements">Dictionary</a></li>
+            <li><a ui-sref="element">Progress</a></li>
+            <!-- -->
           </ul>
           <h3 class="text-muted">Mathematics</h3>
+
+          <ol class="breadcrumb">
+            <li ng-repeat="crumb in breadcrumbs"
+                ng-class="{ active: $last }"><a ui-sref="{{ crumb.route }}" ng-if="!$last">{{ crumb.displayName }}&nbsp;</a><span ng-show="$last">{{ crumb.displayName }}</span>
+            </li>
+          </ol>
+
         </div>
 
+        <!-- ui-router -->
+        <div ui-view="main"></div>
+        <!-- -->
+
+        <!-- router --@
         <div ng-view=""></div>
+        @!-- -->
 
       </div>
 
@@ -57,7 +81,7 @@
     
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
-    <script src="bower_components/jquery/jquery.js"></script>
+    <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/affix.js"></script>
     <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/alert.js"></script>
@@ -76,30 +100,32 @@
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="bower_components/angular-animate/angular-animate.js"></script>
     <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <!-- --
     <script src="bower_components/angular-route/angular-route.js"></script>
+    !-- -->
+    <!-- -->
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <!-- -->
     <script src="bower_components/angular-mocks/angular-mocks.js"></script>
     <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
     <script src="bower_components/qunit/qunit/qunit.js"></script>
     <script src="bower_components/snap.svg/dist/snap.svg-min.js"></script>
+    <script src="bower_components/angular-material/angular-material.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
-    <!--
-    <script src="scripts/lasng.js"></script>
-  -->
-
+    <script src="bower_components/requirejs/require.js"></script>
+    <script src="scripts/clientside/lasng.js"></script>
+  
   <!-- build:js({.tmp,app}) scripts/scripts.js -->
-  <script src="scripts/clientside/app.js"></script>
+  <script src="scripts/clientside/appR.js"></script>
   <script src="scripts/clientside/controllers/question.js"></script>
-  <script src="scripts/clientside/controllers/elements.js"></script>
+  <script src="scripts/clientside/controllers/elementsR.js"></script>
+  <script src="scripts/clientside/controllers/theory.page.js"></script>
   <script src="scripts/clientside/services/questionContent.js"></script>
   <script src="scripts/clientside/services/elementContent.js"></script>
   <script src="scripts/clientside/filters/elementFilter.js"></script>
   <!-- endbuild -->
-
-    <!--
-    <script data-main="scripts/lasng" src="bower_components/requirejs/require.js"></script>
-  -->
 
 </body>
 </html>

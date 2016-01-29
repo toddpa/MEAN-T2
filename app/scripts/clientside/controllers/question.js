@@ -17,9 +17,9 @@ angular.module('mathsApp')
 			question: routeParams.name,
 			form: 'full'
 		}, function(questionBatch) {
-			console.log(questionBatch);
+			$log.debug(questionBatch);
 		});
-		$log.info('**> QuestionCtrl');
+		$log.info('**> QuestionCtrl' + JSON.stringify(routeParams));
 
 		$("#LAS-question-content").css("visibility", "visible");
 		$("#LAS-functions").css("visibility", "visible");
