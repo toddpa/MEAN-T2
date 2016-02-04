@@ -27,17 +27,17 @@
       <div class="container">
         <div class="header">
           <ul class="nav nav-pills pull-right">
-            <!-- router --@
+            <!-- router -->
             <li class="active"><a ng-href="#/elements">Subjects</a></li>
             <li><a ng-href="#/dictionary">Dictionary</a></li>
             <li><a ng-href="#/progress">Progress</a></li>
-            @!-- router -->
+            <!-- router -->
 
-            <!-- ui-router -->
+            <!-- ui-router --@
             <li class="active"><a ui-sref="subject">STuff</a></li>
             <li><a ui-sref="elements">Dictionary</a></li>
             <li><a ui-sref="element">Progress</a></li>
-            <!-- -->
+            @!-- -->
           </ul>
           <h3 class="text-muted">Mathematics</h3>
 
@@ -51,13 +51,13 @@
 
         </div>
 
-        <!-- ui-router -->
+        <!-- ui-router --@
         <div ui-view="main"></div>
-        <!-- -->
-
-        <!-- router --@
-        <div ng-view=""></div>
         @!-- -->
+
+        <!-- router -->
+        <div ng-view=""></div>
+        <!-- -->
 
       </div>
 
@@ -102,12 +102,14 @@
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="bower_components/angular-animate/angular-animate.js"></script>
     <script src="bower_components/angular-touch/angular-touch.js"></script>
-    <!-- --
+    <!-- -->
     <script src="bower_components/angular-route/angular-route.js"></script>
-    !-- -->
     <!-- -->
+
+    <!-- --@
     <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
-    <!-- -->
+    @!-- -->
+
     <script src="bower_components/angular-mocks/angular-mocks.js"></script>
     <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
     <script src="bower_components/qunit/qunit/qunit.js"></script>
@@ -120,9 +122,9 @@
     <script src="scripts/clientside/lasng.js"></script>
   
   <!-- build:js({.tmp,app}) scripts/scripts.js -->
-  <script src="scripts/clientside/appR.js"></script>
+  <script src="scripts/clientside/app.js"></script>
   <script src="scripts/clientside/controllers/question.js"></script>
-  <script src="scripts/clientside/controllers/elementsR.js"></script>
+  <script src="scripts/clientside/controllers/elements.js"></script>
   <script src="scripts/clientside/controllers/theory.page.js"></script>
   <script src="scripts/clientside/services/questionContent.js"></script>
   <script src="scripts/clientside/services/elementContent.js"></script>
