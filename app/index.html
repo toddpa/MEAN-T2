@@ -34,18 +34,20 @@
             @!-- router -->
 
             <!-- ui-router -->
-            <li class="active"><a ui-sref="subject">Subjects</a></li>
+            <li class="active"><a ui-sref="subject">STuff</a></li>
             <li><a ui-sref="elements">Dictionary</a></li>
             <li><a ui-sref="element">Progress</a></li>
             <!-- -->
           </ul>
           <h3 class="text-muted">Mathematics</h3>
 
+        <!-- REMOVE THE BREADCRUMB FOR NOW
           <ol class="breadcrumb">
             <li ng-repeat="crumb in breadcrumbs"
                 ng-class="{ active: $last }"><a ui-sref="{{ crumb.route }}" ng-if="!$last">{{ crumb.displayName }}&nbsp;</a><span ng-show="$last">{{ crumb.displayName }}</span>
             </li>
           </ol>
+        -->
 
         </div>
 
