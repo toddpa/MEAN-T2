@@ -26,7 +26,7 @@ var theAppModule = angular
             url: "/",
             views: {
                 "main": {
-                  templateUrl: 'views/subjectsR.html',
+                  templateUrl: 'views/subjects.html',
                   controller: 'ElementsCtrl',
                   controllerAs: 'elementsCtrl'
                 },
